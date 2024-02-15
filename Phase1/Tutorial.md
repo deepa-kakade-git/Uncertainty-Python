@@ -68,7 +68,6 @@ Now to sample from that we use the `random` library which has a `choice`
 command:
 
 ```{code-cell} ipython3
-:tags: [nbval-ignore-output]
 
 import random
 
@@ -78,7 +77,6 @@ random.choice(bag)
 If we run this many times we will not always get the same outcome:
 
 ```{code-cell} ipython3
-:tags: [nbval-ignore-output]
 
 random.choice(bag)
 ```
@@ -109,13 +107,11 @@ We can then call this function, passing our `bag` to it as the `container` from
 which to pick:
 
 ```{code-cell} ipython3
-:tags: [nbval-ignore-output]
 
 pick_a_token(container=bag)
 ```
 
 ```{code-cell} ipython3
-:tags: [nbval-ignore-output]
 
 pick_a_token(container=bag)
 ```
@@ -150,7 +146,6 @@ len(samples)
 Using this we can now use `==` (double `=`) to check how many of those samples are `Red`:
 
 ```{code-cell} ipython3
-:tags: [nbval-ignore-output]
 
 sum(token == "Red" for token in samples) / number_of_repetitions
 ```
@@ -159,7 +154,6 @@ We have sampled probability of around .41. The theoretic value is $\frac{5}{5 +
 7}$:
 
 ```{code-cell} ipython3
-:tags: [nbval-ignore-output]
 
 5 / (5 + 7)
 ```
@@ -209,13 +203,11 @@ def sample_experiment(bag):
 Using this we can sample according to the problem description:
 
 ```{code-cell} ipython3
-:tags: [nbval-ignore-output]
 
 sample_experiment(bag=bag)
 ```
 
 ```{code-cell} ipython3
-:tags: [nbval-ignore-output]
 
 sample_experiment(bag=bag)
 ```
@@ -224,7 +216,6 @@ We can now find out the probability of selecting heads by carrying out a large
 number of repetitions and checking which ones have a coin that is heads:
 
 ```{code-cell} ipython3
-:tags: [nbval-ignore-output]
 
 samples = [sample_experiment(bag=bag) for repetition in range(number_of_repetitions)]
 sum(coin == "Heads" for token, coin in samples) / number_of_repetitions
@@ -239,7 +230,6 @@ sym.S(5) / (12) * sym.S(2) / 3 + sym.S(7) / (12) * sym.S(1) / 2
 ```
 
 ```{code-cell} ipython3
-:tags: [nbval-ignore-output]
 
 41 / 72
 ```
@@ -254,7 +244,6 @@ $$
 $$
 
 ```{code-cell} ipython3
-:tags: [nbval-ignore-output]
 
 samples_with_heads = [(token, coin) for token, coin in samples if coin == "Heads"]
 sum(token == "Red" for token, coin in samples_with_heads) / len(samples_with_heads)
@@ -271,7 +260,6 @@ $$
 ```
 
 ```{code-cell} ipython3
-:tags: [nbval-ignore-output]
 
 20 / 41
 ```
